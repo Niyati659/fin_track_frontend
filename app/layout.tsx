@@ -30,14 +30,14 @@ html {
 }
         `}</style>
       </head>
-      <Header/>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <Header />
           {children}
           <Toaster />
+          <Footer />
         </ThemeProvider>
       </body>
-      <Footer />
     </html>
   )
 }

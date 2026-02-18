@@ -4,6 +4,7 @@ import { TrendingUp } from "lucide-react"
 import { useEffect, useState } from "react"
 import { LoginModal } from "./loginModal"
 import { SignupModal } from "./signupModal"
+import { ThemeToggle } from "./theme-toggle"
 
 export function Header() {
   const [userId, setUserId] = useState<string | null>(null)
@@ -35,7 +36,7 @@ export function Header() {
     setUserId(null)
     setUsername(null)
     window.location.reload()
-  }  
+  }
   return (
     <header className="border-b bg-card">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -56,12 +57,16 @@ export function Header() {
           <a href="/advisory-hub" className="text-muted-foreground hover:text-foreground transition-colors">
             Advisory Hub
           </a>
+          <a href="/trusttxn" className="text-muted-foreground hover:text-foreground transition-colors">
+            Trust Txn
+          </a>
         </nav>
         <div className="flex items-center gap-4">
           <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors font-medium">
             Contact Us
           </a>
-           {userId ? (
+          <ThemeToggle />
+          {userId ? (
             <>
               <span className="text-sm text-muted-foreground">
                 Welcome, User {username}
